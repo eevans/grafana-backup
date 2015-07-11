@@ -1,0 +1,5 @@
+
+# elasticsearch http credentials
+credentials:
+  username: 'eevans'
+  password: 'xxxxxx'

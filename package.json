@@ -1,0 +1,19 @@
+{
+    "name": "grafana-backup",
+    "version": "1.0.0",
+    "description": "Backup Grafana dashboards",
+    "main": "backup.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/eevans/grafana-backup.git"
+    },
+    "author": "Eric Evans <eevans@wikimedia.org",
+    "homepage": "https://github.com/eevans/grafana-backup",
+    "dependencies": {
+        "bluebird": "2.8.2",
+        "extend": "^1.3.0",
+        "js-yaml": "^3.3.1",
+        "preq": "0.4.3",
+        "yargs": "^3.7.2"
+    }
+}
