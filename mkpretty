@@ -1,0 +1,5 @@
+#!/bin/sh
+
+for f in target/*; do
+    aeson-pretty < $f > tmp.json && mv tmp.json backups/`basename $f`
+done

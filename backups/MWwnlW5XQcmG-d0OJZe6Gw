@@ -1,0 +1,425 @@
+{
+    "hideControls": false,
+    "annotations": {
+        "list": []
+    },
+    "style": "dark",
+    "time": {
+        "to": "now",
+        "from": "now-12h"
+    },
+    "templating": {
+        "list": []
+    },
+    "refresh": false,
+    "hideAllLegends": false,
+    "editable": true,
+    "nav": [
+        {
+            "status": "Stable",
+            "refresh_intervals": [
+                "5s",
+                "10s",
+                "30s",
+                "1m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "2h",
+                "1d"
+            ],
+            "now": true,
+            "enable": true,
+            "notice": false,
+            "time_options": [
+                "5m",
+                "15m",
+                "1h",
+                "2h",
+                "6h",
+                "12h",
+                "24h",
+                "2d",
+                "7d",
+                "30d"
+            ],
+            "type": "timepicker",
+            "collapse": false
+        }
+    ],
+    "rows": [
+        {
+            "height": "300px",
+            "editable": true,
+            "panels": [
+                {
+                    "span": 12,
+                    "nullPointMode": "connected",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "short",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "restbase.v1_page_html_-title-_-revision--_tid-.GET.ALL.rate"
+                        },
+                        {
+                            "hide": false,
+                            "target": "restbase.v1_page_html_-title-_-revision--_tid-.GET.ALL.mean"
+                        },
+                        {
+                            "hide": false,
+                            "target": "restbase.sys_key-rev-value_-bucket-_-key--_revision--_tid-.GET.2xx.rate"
+                        },
+                        {
+                            "hide": true,
+                            "target": "restbase.v1_page_html_-title-_-revision--_tid-.GET.ALL.max"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": false,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 8,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": 0,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "RESTBase html revision request rates",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "alignAsTable": true,
+                        "current": true,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                },
+                {
+                    "span": 12,
+                    "nullPointMode": "connected",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "short",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "movingMedian(restbase.sys_key-rev-value_-bucket-_-key--_revision--_tid-.GET.2xx.99percentile, 7)"
+                        },
+                        {
+                            "hide": false,
+                            "target": "movingMedian(restbase.sys_key-rev-value_-bucket-_-key--_revision--_tid-.GET.2xx.mean, 7)"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": false,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 10,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": 0,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "RESTBase html revision request latencies",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "alignAsTable": true,
+                        "current": true,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                }
+            ],
+            "title": "New row",
+            "collapse": false
+        },
+        {
+            "height": "300px",
+            "editable": true,
+            "panels": [
+                {
+                    "span": 12,
+                    "nullPointMode": "connected",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "short",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "movingMedian(restbase.sys_parsoid_transform_html_to_wikitext-_title--_revision-.POST.ALL.mean, 10)"
+                        },
+                        {
+                            "hide": false,
+                            "target": "movingMedian(restbase.sys_parsoid_transform_html_to_wikitext-_title--_revision-.POST.ALL.99percentile, 10)"
+                        },
+                        {
+                            "hide": false,
+                            "target": "restbase.sys_action_query.POST.ALL.mean"
+                        },
+                        {
+                            "hide": false,
+                            "target": "restbase.sys_action_query.POST.ALL.99percentile"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": false,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 9,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": 0,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "RESTBase backend requests",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "alignAsTable": true,
+                        "current": true,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                }
+            ],
+            "title": "New row",
+            "collapse": false
+        },
+        {
+            "height": "250px",
+            "editable": true,
+            "panels": [
+                {
+                    "span": 12,
+                    "nullPointMode": "connected",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "short",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "restbase.heap.rss.max"
+                        },
+                        {
+                            "hide": false,
+                            "target": "restbase.heap.rss.mean"
+                        },
+                        {
+                            "hide": false,
+                            "target": "restbase.heap.used.max"
+                        },
+                        {
+                            "hide": false,
+                            "target": "restbase.heap.used.mean"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": false,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 4,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": 0,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "RESTBase heap",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "sortDesc": true,
+                        "alignAsTable": true,
+                        "current": true,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                }
+            ],
+            "title": "New row",
+            "collapse": false
+        }
+    ],
+    "version": 6,
+    "sharedCrosshair": true,
+    "id": null,
+    "title": "RESTBase",
+    "timezone": "browser",
+    "originalTitle": "RESTBase",
+    "tags": []
+}

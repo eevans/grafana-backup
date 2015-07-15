@@ -1,0 +1,278 @@
+{
+    "hideControls": false,
+    "annotations": {
+        "list": []
+    },
+    "style": "dark",
+    "time": {
+        "to": "now",
+        "from": "now-6h"
+    },
+    "templating": {
+        "list": [
+            {
+                "allFormat": "glob",
+                "refresh_on_load": false,
+                "includeAll": true,
+                "refresh": true,
+                "current": {
+                    "text": "All",
+                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
+                },
+                "name": "node",
+                "query": "cassandra.restbase*",
+                "datasource": "graphite",
+                "options": [
+                    {
+                        "text": "All",
+                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
+                    },
+                    {
+                        "text": "restbase1001",
+                        "value": "restbase1001"
+                    },
+                    {
+                        "text": "restbase1002",
+                        "value": "restbase1002"
+                    },
+                    {
+                        "text": "restbase1003",
+                        "value": "restbase1003"
+                    },
+                    {
+                        "text": "restbase1004",
+                        "value": "restbase1004"
+                    },
+                    {
+                        "text": "restbase1005",
+                        "value": "restbase1005"
+                    },
+                    {
+                        "text": "restbase1006",
+                        "value": "restbase1006"
+                    },
+                    {
+                        "text": "restbase1007",
+                        "value": "restbase1007"
+                    }
+                ],
+                "type": "query"
+            },
+            {
+                "allFormat": "glob",
+                "refresh_on_load": false,
+                "includeAll": true,
+                "refresh": true,
+                "current": {
+                    "text": "All",
+                    "value": "{BINARY,COUNTER_MUTATION,MUTATION,PAGED_RANGE,RANGE_SLICE,READ,READ_REPAIR,REQUEST_RESPONSE,_TRACE}"
+                },
+                "name": "message",
+                "query": "cassandra.$node.org.apache.cassandra.metrics.DroppedMessage.*",
+                "datasource": "graphite",
+                "options": [
+                    {
+                        "text": "All",
+                        "value": "{BINARY,COUNTER_MUTATION,MUTATION,PAGED_RANGE,RANGE_SLICE,READ,READ_REPAIR,REQUEST_RESPONSE,_TRACE}"
+                    },
+                    {
+                        "text": "BINARY",
+                        "value": "BINARY"
+                    },
+                    {
+                        "text": "COUNTER_MUTATION",
+                        "value": "COUNTER_MUTATION"
+                    },
+                    {
+                        "text": "MUTATION",
+                        "value": "MUTATION"
+                    },
+                    {
+                        "text": "PAGED_RANGE",
+                        "value": "PAGED_RANGE"
+                    },
+                    {
+                        "text": "RANGE_SLICE",
+                        "value": "RANGE_SLICE"
+                    },
+                    {
+                        "text": "READ",
+                        "value": "READ"
+                    },
+                    {
+                        "text": "READ_REPAIR",
+                        "value": "READ_REPAIR"
+                    },
+                    {
+                        "text": "REQUEST_RESPONSE",
+                        "value": "REQUEST_RESPONSE"
+                    },
+                    {
+                        "text": "_TRACE",
+                        "value": "_TRACE"
+                    }
+                ],
+                "type": "query"
+            },
+            {
+                "allFormat": "glob",
+                "refresh_on_load": false,
+                "includeAll": false,
+                "current": {
+                    "text": "1MinuteRate",
+                    "value": "1MinuteRate"
+                },
+                "name": "metric",
+                "query": "meanRate, 1MinuteRate, 5MinuteRate, 15MinuteRate",
+                "datasource": "graphite",
+                "options": [
+                    {
+                        "text": "meanRate",
+                        "value": "meanRate"
+                    },
+                    {
+                        "text": "1MinuteRate",
+                        "value": "1MinuteRate"
+                    },
+                    {
+                        "text": "5MinuteRate",
+                        "value": "5MinuteRate"
+                    },
+                    {
+                        "text": "15MinuteRate",
+                        "value": "15MinuteRate"
+                    }
+                ],
+                "type": "custom"
+            }
+        ],
+        "enable": true
+    },
+    "refresh": false,
+    "hideAllLegends": false,
+    "editable": true,
+    "nav": [
+        {
+            "status": "Stable",
+            "refresh_intervals": [
+                "5s",
+                "10s",
+                "30s",
+                "1m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "2h",
+                "1d"
+            ],
+            "now": true,
+            "enable": true,
+            "notice": false,
+            "time_options": [
+                "5m",
+                "15m",
+                "1h",
+                "2h",
+                "6h",
+                "12h",
+                "24h",
+                "2d",
+                "7d",
+                "30d"
+            ],
+            "type": "timepicker",
+            "collapse": false
+        }
+    ],
+    "rows": [
+        {
+            "height": "450px",
+            "editable": true,
+            "panels": [
+                {
+                    "span": 12,
+                    "nullPointMode": "connected",
+                    "leftYAxisLabel": "messages/sec",
+                    "points": false,
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "short",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 1,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "target": "aliasSub(cassandra.$node.org.apache.cassandra.metrics.DroppedMessage.$message.Dropped.1MinuteRate, 'cassandra.(.+).org.+DroppedMessage.(.+).Dropped.1MinuteRate', '\\1-\\2')"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": false,
+                        "value_type": "cumulative"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 35,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(232, 147, 96, 0.27)",
+                        "leftMin": null,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "Dropped messages",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": false,
+                        "avg": false,
+                        "values": false,
+                        "alignAsTable": false,
+                        "current": false,
+                        "total": false,
+                        "min": false,
+                        "show": true
+                    }
+                }
+            ],
+            "title": "Latency All",
+            "collapse": false
+        }
+    ],
+    "version": 6,
+    "sharedCrosshair": true,
+    "id": null,
+    "title": "RESTBase :: Cassandra :: Dropped messages",
+    "timezone": "utc",
+    "originalTitle": "RESTBase :: Cassandra :: Dropped messages",
+    "tags": []
+}

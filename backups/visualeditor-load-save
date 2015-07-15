@@ -1,0 +1,532 @@
+{
+    "hideControls": false,
+    "annotations": {
+        "list": [
+            {
+                "showLine": true,
+                "iconColor": "#C0C6BE",
+                "enable": true,
+                "name": "Show deployments",
+                "datasource": "graphite",
+                "lineColor": "rgba(38, 173, 179, 0.55)",
+                "iconSize": 10,
+                "target": "exclude(aliasByNode(deploy.*.count,-2),\"all\")"
+            }
+        ],
+        "enable": true
+    },
+    "style": "dark",
+    "time": {
+        "to": "now-3m",
+        "from": "now-2h"
+    },
+    "templating": {
+        "list": [
+            {
+                "allFormat": "glob",
+                "refresh_on_load": false,
+                "includeAll": false,
+                "regex": "m.+",
+                "current": {
+                    "text": "mwTarget",
+                    "value": "mwTarget"
+                },
+                "name": "Target",
+                "query": "mwTarget, mobile",
+                "datasource": "graphite",
+                "options": [
+                    {
+                        "text": "mwTarget",
+                        "value": "mwTarget"
+                    },
+                    {
+                        "text": "mobile",
+                        "value": "mobile"
+                    }
+                ],
+                "type": "custom"
+            }
+        ],
+        "enable": true
+    },
+    "refresh": false,
+    "hideAllLegends": false,
+    "editable": true,
+    "nav": [
+        {
+            "status": "Stable",
+            "nowDelay": "3m",
+            "refresh_intervals": [
+                "1m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "2h",
+                "1d"
+            ],
+            "now": true,
+            "enable": true,
+            "notice": false,
+            "time_options": [
+                "1h",
+                "2h",
+                "6h",
+                "12h",
+                "24h",
+                "2d",
+                "7d",
+                "30d"
+            ],
+            "type": "timepicker",
+            "collapse": false
+        }
+    ],
+    "rows": [
+        {
+            "height": "350px",
+            "editable": true,
+            "panels": [
+                {
+                    "span": 4,
+                    "nullPointMode": "connected",
+                    "leftYAxisLabel": "",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "ms",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.restbaseLoad.mean, 30), 'mean RESTBase load time')"
+                        },
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.apiLoad.mean, 30), 'mean PHP API load time')"
+                        },
+                        {
+                            "hide": true,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.domLoad.mean, 30), 'mean PHP API load time, legacy')"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": true,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 8,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": null,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "VisualEditor HTML DOM load time, mean",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "sortDesc": true,
+                        "alignAsTable": true,
+                        "current": false,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                },
+                {
+                    "span": 4,
+                    "nullPointMode": "connected",
+                    "leftYAxisLabel": "",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "ms",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.restbaseLoad.p99, 30), '99% RESTBase load time')"
+                        },
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.apiLoad.p99, 30), '99% PHP API load time)')"
+                        },
+                        {
+                            "hide": true,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.domLoad.p99, 30), '99% PHP API load time, legacy)')"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": true,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 11,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": null,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "VisualEditor HTML DOM load, 99th percentile",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "sortDesc": true,
+                        "alignAsTable": true,
+                        "current": false,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                },
+                {
+                    "span": 4,
+                    "nullPointMode": "connected",
+                    "leftYAxisLabel": "per second",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "short",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "rightYAxisLabel": "",
+                    "seriesOverrides": [],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.restbaseLoad.sample_rate, 30), 'RESTBase load rate (req/s)')"
+                        },
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(sumSeries(ve.$Target.performance.system.{dom,api}Load.sample_rate), 30), 'PHP API load rate (req/s)')"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": true,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 12,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": null,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "VisualEditor HTML DOM load, rates",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "sortDesc": true,
+                        "alignAsTable": true,
+                        "current": false,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                }
+            ],
+            "title": "Load",
+            "collapse": false
+        },
+        {
+            "height": "350px",
+            "editable": true,
+            "panels": [
+                {
+                    "span": 6,
+                    "nullPointMode": "connected",
+                    "leftYAxisLabel": "time",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "ms",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "rightYAxisLabel": "per second",
+                    "seriesOverrides": [
+                        {
+                            "yaxis": 2,
+                            "alias": "save rate req/s"
+                        }
+                    ],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.serializeforcache.mean, 30), 'mean serialization time')"
+                        },
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.serializeforcache.p99, 30), '99% serialization time')"
+                        },
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.serializeforcache.sample_rate, 30), 'save rate req/s')"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": true,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 9,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": 0,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "VisualEditor HTML DOM serialization",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "alignAsTable": true,
+                        "current": true,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                },
+                {
+                    "span": 6,
+                    "nullPointMode": "connected",
+                    "leftYAxisLabel": "",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "ms",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "alias(ve.$Target.performance.system.activation.mean, 'mean activation time')"
+                        },
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(ve.$Target.performance.system.activation.p99, 5), '99% activation time')"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": true,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 14,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": 0,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "VisualEditor activation time",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "alignAsTable": true,
+                        "current": true,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                }
+            ],
+            "title": "New row",
+            "collapse": false
+        }
+    ],
+    "version": 6,
+    "sharedCrosshair": true,
+    "id": null,
+    "title": "VisualEditor load / save",
+    "timezone": "browser",
+    "originalTitle": "VisualEditor load / save",
+    "tags": []
+}
