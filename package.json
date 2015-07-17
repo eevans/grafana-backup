@@ -9,6 +9,7 @@
     },
     "author": "Eric Evans <eevans@wikimedia.org",
     "homepage": "https://github.com/eevans/grafana-backup",
+    "license": "Apache2",
     "dependencies": {
         "bluebird": "2.8.2",
         "extend": "^1.3.0",
