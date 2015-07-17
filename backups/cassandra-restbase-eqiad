@@ -507,8 +507,8 @@
                     }
                 }
             ],
-            "title": "New row",
-            "collapse": true
+            "title": "Timeouts",
+            "collapse": false
         },
         {
             "height": "250px",
