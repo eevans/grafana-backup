@@ -197,7 +197,7 @@
                         "rightMin": null,
                         "threshold2Color": "rgba(234, 112, 112, 0.22)",
                         "threshold1Color": "rgba(234, 25, 25, 0.27)",
-                        "leftMin": 0,
+                        "leftMin": null,
                         "rightMax": null,
                         "leftMax": null,
                         "min": null,
