@@ -5,8 +5,9 @@
     },
     "style": "dark",
     "time": {
-        "to": "now",
-        "from": "now-6h"
+        "to": "2015-04-30T15:48:25.767Z",
+        "from": "2015-04-01T14:12:59.848Z",
+        "now": false
     },
     "templating": {
         "list": [
@@ -79,7 +80,7 @@
                 "2h",
                 "1d"
             ],
-            "now": true,
+            "now": false,
             "enable": true,
             "notice": false,
             "time_options": [
@@ -240,8 +241,8 @@
                     "x-axis": true,
                     "legend": {
                         "max": false,
-                        "avg": false,
-                        "values": false,
+                        "avg": true,
+                        "values": true,
                         "alignAsTable": false,
                         "current": false,
                         "total": false,
@@ -283,7 +284,7 @@
                     },
                     "targets": [
                         {
-                            "target": "aliasByNode(nonNegativeDerivative(cassandra.$node.jvm.gc.ConcurrentMarkSweep.time), 1)"
+                            "target": "aliasByNode(movingAverage(nonNegativeDerivative(cassandra.$node.jvm.gc.ConcurrentMarkSweep.time), 5), 1)"
                         }
                     ],
                     "tooltip": {
@@ -321,8 +322,8 @@
                     "x-axis": true,
                     "legend": {
                         "max": false,
-                        "avg": false,
-                        "values": false,
+                        "avg": true,
+                        "values": true,
                         "alignAsTable": false,
                         "current": false,
                         "total": false,
@@ -356,7 +357,7 @@
                     },
                     "targets": [
                         {
-                            "target": "aliasByNode(nonNegativeDerivative(cassandra.$node.jvm.gc.ParNew.time), 1)"
+                            "target": "aliasByNode(movingAverage(nonNegativeDerivative(cassandra.$node.jvm.gc.ParNew.time), 5), 1)"
                         }
                     ],
                     "tooltip": {
@@ -394,8 +395,8 @@
                     "x-axis": true,
                     "legend": {
                         "max": false,
-                        "avg": false,
-                        "values": false,
+                        "avg": true,
+                        "values": true,
                         "alignAsTable": false,
                         "current": false,
                         "total": false,
@@ -405,7 +406,7 @@
                 }
             ],
             "title": "GC (CMS)",
-            "collapse": true
+            "collapse": false
         },
         {
             "height": "250px",

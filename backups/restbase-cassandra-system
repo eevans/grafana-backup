@@ -6,7 +6,8 @@
     "style": "dark",
     "time": {
         "to": "now",
-        "from": "now-6h"
+        "from": "now-6h",
+        "now": false
     },
     "templating": {
         "list": [
@@ -17,15 +18,15 @@
                 "refresh": true,
                 "current": {
                     "text": "All",
-                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006}"
+                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
                 },
                 "name": "node",
-                "query": "servers.restbase100[1-6]*",
+                "query": "servers.restbase100[1-7]*",
                 "datasource": "graphite",
                 "options": [
                     {
                         "text": "All",
-                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006}"
+                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
                     },
                     {
                         "text": "restbase1001",
@@ -50,6 +51,10 @@
                     {
                         "text": "restbase1006",
                         "value": "restbase1006"
+                    },
+                    {
+                        "text": "restbase1007",
+                        "value": "restbase1007"
                     }
                 ],
                 "type": "query"

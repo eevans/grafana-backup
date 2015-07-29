@@ -64,7 +64,7 @@
                     "linewidth": 2,
                     "resolution": 100,
                     "y_formats": [
-                        "short",
+                        "ms",
                         "short"
                     ],
                     "legend_counts": true,
@@ -108,7 +108,7 @@
                     },
                     "aliasColors": {},
                     "options": false,
-                    "title": "Cassandra heap: G1GC young gen",
+                    "title": "Cassandra heap: G1GC new gen",
                     "spyable": true,
                     "type": "graph",
                     "percentage": false,
@@ -524,7 +524,173 @@
                     "linewidth": 2,
                     "resolution": 100,
                     "y_formats": [
-                        "short",
+                        "µs",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 1,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "function": "mean",
+                            "column": "value",
+                            "target": "aliasSub(cassandra.restbase*.org.apache.cassandra.metrics.ClientRequest.Read.Latency.99percentile, '^.*\\.restbase(\\d*).*$', '\\1 p99')"
+                        },
+                        {
+                            "function": "mean",
+                            "column": "value",
+                            "target": "aliasSub(cassandra.restbase*.org.apache.cassandra.metrics.ClientRequest.Read.Latency.50percentile, '^.*\\.restbase(\\d*).*$', '\\1 p50')"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": false,
+                        "value_type": "cumulative"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 26,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                        "leftMin": null,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "Cassandra hosts: read latency",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": false,
+                        "avg": false,
+                        "values": false,
+                        "alignAsTable": false,
+                        "current": false,
+                        "total": false,
+                        "min": false,
+                        "show": true
+                    }
+                },
+                {
+                    "span": 6,
+                    "nullPointMode": "connected",
+                    "points": false,
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "µs",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 1,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "function": "mean",
+                            "column": "value",
+                            "target": "aliasSub(cassandra.restbase*.org.apache.cassandra.metrics.ClientRequest.Write.Latency.99percentile, '^.*\\.restbase(\\d*).*$', '\\1 p99')"
+                        },
+                        {
+                            "function": "mean",
+                            "column": "value",
+                            "target": "aliasSub(cassandra.restbase*.org.apache.cassandra.metrics.ClientRequest.Write.Latency.50percentile, '^.*\\.restbase(\\d*).*$', '\\1 p50')"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": false,
+                        "value_type": "cumulative"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 27,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                        "leftMin": null,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "Cassandra hosts: write latency",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": false,
+                        "avg": false,
+                        "values": false,
+                        "alignAsTable": false,
+                        "current": false,
+                        "total": false,
+                        "min": false,
+                        "show": true
+                    }
+                }
+            ],
+            "title": "Latencies",
+            "collapse": false
+        },
+        {
+            "height": "250px",
+            "editable": true,
+            "panels": [
+                {
+                    "span": 6,
+                    "nullPointMode": "connected",
+                    "points": false,
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "Bps",
                         "short"
                     ],
                     "legend_counts": true,
@@ -598,7 +764,7 @@
                     "linewidth": 2,
                     "resolution": 100,
                     "y_formats": [
-                        "short",
+                        "Bps",
                         "short"
                     ],
                     "legend_counts": true,
@@ -949,7 +1115,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(servers.restbase100[1-6].diskspace._var.byte_used, '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(servers.restbase100[1-7].diskspace._var.byte_used, '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
