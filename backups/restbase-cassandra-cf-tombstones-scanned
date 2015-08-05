@@ -17,7 +17,7 @@
                 "refresh": true,
                 "current": {
                     "text": "All",
-                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
+                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008,restbase1009}"
                 },
                 "name": "node",
                 "query": "cassandra.restbase*",
@@ -25,7 +25,7 @@
                 "options": [
                     {
                         "text": "All",
-                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
+                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008,restbase1009}"
                     },
                     {
                         "text": "restbase1001",
@@ -54,6 +54,14 @@
                     {
                         "text": "restbase1007",
                         "value": "restbase1007"
+                    },
+                    {
+                        "text": "restbase1008",
+                        "value": "restbase1008"
+                    },
+                    {
+                        "text": "restbase1009",
+                        "value": "restbase1009"
                     }
                 ],
                 "type": "query"
@@ -85,6 +93,10 @@
                         "value": "local_group_default_T_parsoid_html"
                     },
                     {
+                        "text": "local_group_default_T_parsoid_section_offsets",
+                        "value": "local_group_default_T_parsoid_section_offsets"
+                    },
+                    {
                         "text": "local_group_default_T_parsoid_wikitext",
                         "value": "local_group_default_T_parsoid_wikitext"
                     },
@@ -103,6 +115,10 @@
                     {
                         "text": "local_group_phase0_T_parsoid_html",
                         "value": "local_group_phase0_T_parsoid_html"
+                    },
+                    {
+                        "text": "local_group_phase0_T_parsoid_section_offsets",
+                        "value": "local_group_phase0_T_parsoid_section_offsets"
                     },
                     {
                         "text": "local_group_phase0_T_parsoid_wikitext",
@@ -125,6 +141,10 @@
                         "value": "local_group_wikibooks_T_parsoid_html"
                     },
                     {
+                        "text": "local_group_wikibooks_T_parsoid_section_offsets",
+                        "value": "local_group_wikibooks_T_parsoid_section_offsets"
+                    },
+                    {
                         "text": "local_group_wikibooks_T_parsoid_wikitext",
                         "value": "local_group_wikibooks_T_parsoid_wikitext"
                     },
@@ -143,6 +163,10 @@
                     {
                         "text": "local_group_wikimedia_T_parsoid_html",
                         "value": "local_group_wikimedia_T_parsoid_html"
+                    },
+                    {
+                        "text": "local_group_wikimedia_T_parsoid_section_offsets",
+                        "value": "local_group_wikimedia_T_parsoid_section_offsets"
                     },
                     {
                         "text": "local_group_wikimedia_T_parsoid_wikitext",
@@ -165,6 +189,10 @@
                         "value": "local_group_wikinews_T_parsoid_html"
                     },
                     {
+                        "text": "local_group_wikinews_T_parsoid_section_offsets",
+                        "value": "local_group_wikinews_T_parsoid_section_offsets"
+                    },
+                    {
                         "text": "local_group_wikinews_T_parsoid_wikitext",
                         "value": "local_group_wikinews_T_parsoid_wikitext"
                     },
@@ -183,6 +211,10 @@
                     {
                         "text": "local_group_wikipedia_T_parsoid_html",
                         "value": "local_group_wikipedia_T_parsoid_html"
+                    },
+                    {
+                        "text": "local_group_wikipedia_T_parsoid_section_offsets",
+                        "value": "local_group_wikipedia_T_parsoid_section_offsets"
                     },
                     {
                         "text": "local_group_wikipedia_T_parsoid_wikitext",
@@ -205,6 +237,10 @@
                         "value": "local_group_wikiquote_T_parsoid_html"
                     },
                     {
+                        "text": "local_group_wikiquote_T_parsoid_section_offsets",
+                        "value": "local_group_wikiquote_T_parsoid_section_offsets"
+                    },
+                    {
                         "text": "local_group_wikiquote_T_parsoid_wikitext",
                         "value": "local_group_wikiquote_T_parsoid_wikitext"
                     },
@@ -223,6 +259,10 @@
                     {
                         "text": "local_group_wikisource_T_parsoid_html",
                         "value": "local_group_wikisource_T_parsoid_html"
+                    },
+                    {
+                        "text": "local_group_wikisource_T_parsoid_section_offsets",
+                        "value": "local_group_wikisource_T_parsoid_section_offsets"
                     },
                     {
                         "text": "local_group_wikisource_T_parsoid_wikitext",
@@ -245,6 +285,10 @@
                         "value": "local_group_wikiversity_T_parsoid_html"
                     },
                     {
+                        "text": "local_group_wikiversity_T_parsoid_sectioeXH8_ri",
+                        "value": "local_group_wikiversity_T_parsoid_sectioeXH8_ri"
+                    },
+                    {
                         "text": "local_group_wikiversity_T_parsoid_wikitext",
                         "value": "local_group_wikiversity_T_parsoid_wikitext"
                     },
@@ -265,6 +309,10 @@
                         "value": "local_group_wikivoyage_T_parsoid_html"
                     },
                     {
+                        "text": "local_group_wikivoyage_T_parsoid_section_offsets",
+                        "value": "local_group_wikivoyage_T_parsoid_section_offsets"
+                    },
+                    {
                         "text": "local_group_wikivoyage_T_parsoid_wikitext",
                         "value": "local_group_wikivoyage_T_parsoid_wikitext"
                     },
@@ -283,6 +331,10 @@
                     {
                         "text": "local_group_wiktionary_T_parsoid_html",
                         "value": "local_group_wiktionary_T_parsoid_html"
+                    },
+                    {
+                        "text": "local_group_wiktionary_T_parsoid_section_offsets",
+                        "value": "local_group_wiktionary_T_parsoid_section_offsets"
                     },
                     {
                         "text": "local_group_wiktionary_T_parsoid_wikitext",
@@ -357,7 +409,7 @@
         ],
         "enable": true
     },
-    "refresh": false,
+    "refresh": "1m",
     "hideAllLegends": false,
     "editable": true,
     "nav": [

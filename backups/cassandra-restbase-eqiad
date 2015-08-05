@@ -1115,7 +1115,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(servers.restbase100[1-7].diskspace._var.byte_used, '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(servers.restbase100*.diskspace._var.byte_used, '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {

@@ -5,8 +5,8 @@
     },
     "style": "dark",
     "time": {
-        "to": "2015-04-30T15:48:25.767Z",
-        "from": "2015-04-01T14:12:59.848Z",
+        "to": "now",
+        "from": "now-6h",
         "now": false
     },
     "templating": {
@@ -18,7 +18,7 @@
                 "refresh": true,
                 "current": {
                     "text": "All",
-                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
+                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008,restbase1009}"
                 },
                 "name": "node",
                 "query": "cassandra.restbase*",
@@ -26,7 +26,7 @@
                 "options": [
                     {
                         "text": "All",
-                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
+                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008,restbase1009}"
                     },
                     {
                         "text": "restbase1001",
@@ -55,6 +55,14 @@
                     {
                         "text": "restbase1007",
                         "value": "restbase1007"
+                    },
+                    {
+                        "text": "restbase1008",
+                        "value": "restbase1008"
+                    },
+                    {
+                        "text": "restbase1009",
+                        "value": "restbase1009"
                     }
                 ],
                 "type": "query"
@@ -62,7 +70,7 @@
         ],
         "enable": true
     },
-    "refresh": false,
+    "refresh": "1m",
     "hideAllLegends": false,
     "editable": true,
     "nav": [
@@ -80,7 +88,7 @@
                 "2h",
                 "1d"
             ],
-            "now": false,
+            "now": true,
             "enable": true,
             "notice": false,
             "time_options": [
@@ -321,7 +329,7 @@
                     "stack": false,
                     "x-axis": true,
                     "legend": {
-                        "max": false,
+                        "max": true,
                         "avg": true,
                         "values": true,
                         "alignAsTable": false,
@@ -394,7 +402,7 @@
                     "stack": false,
                     "x-axis": true,
                     "legend": {
-                        "max": false,
+                        "max": true,
                         "avg": true,
                         "values": true,
                         "alignAsTable": false,
@@ -406,7 +414,7 @@
                 }
             ],
             "title": "GC (CMS)",
-            "collapse": false
+            "collapse": true
         },
         {
             "height": "250px",
@@ -475,9 +483,9 @@
                     "stack": false,
                     "x-axis": true,
                     "legend": {
-                        "max": false,
+                        "max": true,
                         "avg": false,
-                        "values": false,
+                        "values": true,
                         "alignAsTable": false,
                         "current": false,
                         "total": false,

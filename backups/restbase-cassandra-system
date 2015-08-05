@@ -18,15 +18,15 @@
                 "refresh": true,
                 "current": {
                     "text": "All",
-                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
+                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008,restbase1009}"
                 },
                 "name": "node",
-                "query": "servers.restbase100[1-7]*",
+                "query": "servers.restbase100*",
                 "datasource": "graphite",
                 "options": [
                     {
                         "text": "All",
-                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007}"
+                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008,restbase1009}"
                     },
                     {
                         "text": "restbase1001",
@@ -55,6 +55,14 @@
                     {
                         "text": "restbase1007",
                         "value": "restbase1007"
+                    },
+                    {
+                        "text": "restbase1008",
+                        "value": "restbase1008"
+                    },
+                    {
+                        "text": "restbase1009",
+                        "value": "restbase1009"
                     }
                 ],
                 "type": "query"
