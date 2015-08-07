@@ -54,7 +54,7 @@
             "editable": true,
             "panels": [
                 {
-                    "span": 12,
+                    "span": 6,
                     "nullPointMode": "connected",
                     "points": false,
                     "height": "",
@@ -78,6 +78,89 @@
                         "enable": false
                     },
                     "targets": [
+                        {
+                            "hide": false,
+                            "target": "alias(restbase.requests.public.rate, 'Requests from external clients')"
+                        },
+                        {
+                            "hide": false,
+                            "target": "alias(restbase.requests.private.rate, 'Requests from internal clients')"
+                        }
+                    ],
+                    "tooltip": {
+                        "query_as_alias": true,
+                        "shared": true,
+                        "value_type": "individual"
+                    },
+                    "datasource": "graphite",
+                    "steppedLine": false,
+                    "timeShift": null,
+                    "id": 8,
+                    "interactive": true,
+                    "grid": {
+                        "max": null,
+                        "rightMin": null,
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)",
+                        "threshold1Color": "rgba(234, 25, 25, 0.27)",
+                        "leftMin": 0,
+                        "rightMax": null,
+                        "leftMax": null,
+                        "min": null,
+                        "threshold2": null,
+                        "threshold1": null
+                    },
+                    "aliasColors": {},
+                    "options": false,
+                    "title": "RESTBase request rates, internal vs. external clients",
+                    "spyable": true,
+                    "type": "graph",
+                    "percentage": false,
+                    "timeFrom": null,
+                    "links": [],
+                    "timezone": "browser",
+                    "stack": false,
+                    "x-axis": true,
+                    "legend": {
+                        "max": true,
+                        "avg": true,
+                        "values": true,
+                        "rightSide": false,
+                        "alignAsTable": true,
+                        "current": true,
+                        "total": false,
+                        "min": true,
+                        "show": true
+                    }
+                },
+                {
+                    "span": 6,
+                    "nullPointMode": "connected",
+                    "points": false,
+                    "height": "",
+                    "renderer": "flot",
+                    "lines": true,
+                    "scale": 1,
+                    "linewidth": 2,
+                    "resolution": 100,
+                    "y_formats": [
+                        "short",
+                        "short"
+                    ],
+                    "legend_counts": true,
+                    "aliasYAxis": {},
+                    "pointradius": 5,
+                    "seriesOverrides": [],
+                    "fill": 0,
+                    "y-axis": true,
+                    "bars": false,
+                    "annotate": {
+                        "enable": false
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "target": "restbase.v1_page_html_-title-.GET.2xx.sample_rate"
+                        },
                         {
                             "hide": false,
                             "target": "restbase.v1_page_html_-title-_-revision--_tid-.GET.2xx.sample_rate"
@@ -111,7 +194,7 @@
                     "datasource": "graphite",
                     "steppedLine": false,
                     "timeShift": null,
-                    "id": 8,
+                    "id": 14,
                     "interactive": true,
                     "grid": {
                         "max": null,
@@ -149,7 +232,7 @@
                     }
                 },
                 {
-                    "span": 12,
+                    "span": 6,
                     "nullPointMode": "connected",
                     "points": false,
                     "height": "",
@@ -175,11 +258,11 @@
                     "targets": [
                         {
                             "hide": false,
-                            "target": "movingMedian(restbase.sys_key-rev-value_-bucket-_-key--_revision--_tid-.GET.2xx.p99, 7)"
+                            "target": "alias(movingMedian(restbase.sys_key-rev-value_-bucket-_-key--_revision--_tid-.GET.2xx.p99, 7), 'revision GET 2xx response, p99 latency')"
                         },
                         {
                             "hide": false,
-                            "target": "movingMedian(restbase.sys_key-rev-value_-bucket-_-key--_revision--_tid-.GET.2xx.mean, 7)"
+                            "target": "alias(movingMedian(restbase.sys_key-rev-value_-bucket-_-key--_revision--_tid-.GET.2xx.mean, 7), 'revision GET 2xx response, mean latency')"
                         }
                     ],
                     "tooltip": {
@@ -228,7 +311,7 @@
                     }
                 },
                 {
-                    "span": 12,
+                    "span": 6,
                     "nullPointMode": "connected",
                     "points": false,
                     "height": "",
@@ -254,11 +337,11 @@
                     "targets": [
                         {
                             "hide": false,
-                            "target": "movingMedian(restbase.v1_page_html_-title-_-revision--_tid-.GET.ALL.mean, 7)"
+                            "target": "alias(movingMedian(restbase.v1_page_html_-title-_-revision--_tid-.GET.ALL.mean, 7), 'revision GET, p99 (incl. storage miss)')"
                         },
                         {
                             "hide": false,
-                            "target": "movingMedian(restbase.v1_page_html_-title-_-revision--_tid-.GET.ALL.p99, 7)"
+                            "target": "alias(movingMedian(restbase.v1_page_html_-title-_-revision--_tid-.GET.ALL.p99, 7), 'revision GET, mean (incl. storage miss)')"
                         }
                     ],
                     "tooltip": {
@@ -315,7 +398,7 @@
             "editable": true,
             "panels": [
                 {
-                    "span": 12,
+                    "span": 6,
                     "nullPointMode": "connected",
                     "points": false,
                     "height": "",
@@ -341,23 +424,27 @@
                     "targets": [
                         {
                             "hide": false,
-                            "target": "alias(movingMedian(sum(restbase.sys_parsoid_pagebundle_-title--_revision--_tid-.POST.ALL.sample_rate,restbase.sys_parsoid_pagebundle_-title--_revision--_tid-.GET.ALL.sample_rate), 10),'Parsoid pagebundle request rate')"
+                            "target": "alias(movingMedian(sum(restbase.sys_parsoid_pagebundle_-title--_revision--_tid-.POST.ALL.sample_rate,restbase.sys_parsoid_pagebundle_-title--_revision--_tid-.GET.ALL.sample_rate), 10),'Parsoid parse request rate')"
                         },
                         {
                             "hide": false,
-                            "target": "movingMedian(restbase.sys_parsoid_generateAndSave.unchanged_rev_render.rate, 7)"
+                            "target": "alias(movingMedian(restbase.sys_parsoid_pagebundle_-title--_revision--_tid-.GET.5xx.sample_rate, 10), 'Parsoid parse 5xx responses')"
                         },
                         {
                             "hide": false,
-                            "target": "movingMedian(restbase.sys_key-rev-value_-bucket-_-key--_revision--_tid-.PUT.ALL.sample_rate, 10)"
+                            "target": "alias(movingMedian(restbase.sys_parsoid_generateAndSave.unchanged_rev_render.rate, 7), 'Parsoid re-parses without content change')"
                         },
                         {
                             "hide": false,
-                            "target": "movingMedian(restbase.sys_parsoid_pagebundle_-title--_revision--_tid-.GET.5xx.sample_rate, 10)"
+                            "target": "alias(movingMedian(restbase.sys_key-rev-value_-bucket-_-key--_revision--_tid-.PUT.ALL.sample_rate, 10), 'New render storage PUTs (html, data-parsoid, offsets)')"
                         },
                         {
                             "hide": false,
-                            "target": "movingMedian(restbase.sys_parsoid_transform_html_to_wikitext-_title--_revision-.POST.ALL.sample_rate, 10)"
+                            "target": "alias(movingMedian(restbase.sys_parsoid_transform_html_to_wikitext-_title--_revision-.POST.ALL.sample_rate, 10), 'Parsoid html2wt POST ALL')"
+                        },
+                        {
+                            "hide": false,
+                            "target": "alias(movingMedian(restbase.sys_parsoid_transform_html_to_wikitext-_title--_revision-.POST.5xx.sample_rate, 10), 'Parsoid html2wt POST 5xx')"
                         }
                     ],
                     "tooltip": {
@@ -406,7 +493,7 @@
                     }
                 },
                 {
-                    "span": 12,
+                    "span": 6,
                     "nullPointMode": "connected",
                     "points": false,
                     "height": "",

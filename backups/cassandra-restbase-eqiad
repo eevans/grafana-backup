@@ -460,6 +460,11 @@
                             "function": "mean",
                             "column": "value",
                             "target": "aliasSub(nonNegativeDerivative(cassandra.restbase*.org.apache.cassandra.metrics.Connection.TotalTimeouts.count), '^.*\\.restbase(\\d*).*$', '\\1')"
+                        },
+                        {
+                            "function": "mean",
+                            "column": "value",
+                            "target": "aliasSub(movingAverage(nonNegativeDerivative(cassandra.restbase*.org.apache.cassandra.metrics.Connection.TotalTimeouts.count), '1hour'), '^.*\\.restbase(\\d*).*$', '\\1, 1h avg')"
                         }
                     ],
                     "tooltip": {
