@@ -18,7 +18,7 @@
     "style": "dark",
     "time": {
         "to": "now-3m",
-        "from": "now-2h"
+        "from": "now-24h"
     },
     "templating": {
         "list": [
@@ -115,11 +115,11 @@
                     "targets": [
                         {
                             "hide": false,
-                            "target": "alias(movingMedian(ve.$Target.performance.system.restbaseLoad.mean, 30), 'mean RESTBase load time')"
+                            "target": "alias(movingMedian(ve.$Target.performance.system.restbaseLoad.mean, 30), 'mean RESTBase HTML DOM load time')"
                         },
                         {
                             "hide": false,
-                            "target": "alias(movingMedian(ve.$Target.performance.system.apiLoad.mean, 30), 'mean PHP API load time')"
+                            "target": "alias(movingMedian(ve.$Target.performance.system.apiLoad.mean, 30), 'mean PHP API metadata load time')"
                         },
                         {
                             "hide": true,
@@ -150,7 +150,7 @@
                     },
                     "aliasColors": {},
                     "options": false,
-                    "title": "VisualEditor HTML DOM load time, mean",
+                    "title": "VisualEditor API load time, mean",
                     "spyable": true,
                     "type": "graph",
                     "percentage": false,
@@ -200,11 +200,11 @@
                     "targets": [
                         {
                             "hide": false,
-                            "target": "alias(movingMedian(ve.$Target.performance.system.restbaseLoad.p99, 30), '99% RESTBase load time')"
+                            "target": "alias(movingMedian(ve.$Target.performance.system.restbaseLoad.p99, 30), '99% RESTBase HTML load time')"
                         },
                         {
                             "hide": false,
-                            "target": "alias(movingMedian(ve.$Target.performance.system.apiLoad.p99, 30), '99% PHP API load time)')"
+                            "target": "alias(movingMedian(ve.$Target.performance.system.apiLoad.p99, 30), '99% PHP API metadata load time')"
                         },
                         {
                             "hide": true,
@@ -235,7 +235,7 @@
                     },
                     "aliasColors": {},
                     "options": false,
-                    "title": "VisualEditor HTML DOM load, 99th percentile",
+                    "title": "VisualEditor API  load, 99th percentile",
                     "spyable": true,
                     "type": "graph",
                     "percentage": false,
