@@ -15,18 +15,46 @@
                 "allFormat": "glob",
                 "refresh_on_load": false,
                 "includeAll": true,
+                "regex": "/restbase([0-9]).*/",
+                "current": {
+                    "text": "All",
+                    "value": "{1,2}"
+                },
+                "name": "datacenter",
+                "query": "cassandra.restbase{1,2}*",
+                "datasource": null,
+                "options": [
+                    {
+                        "text": "All",
+                        "value": "{1,2}"
+                    },
+                    {
+                        "text": "1",
+                        "value": "1"
+                    },
+                    {
+                        "text": "2",
+                        "value": "2"
+                    }
+                ],
+                "type": "query"
+            },
+            {
+                "allFormat": "glob",
+                "refresh_on_load": false,
+                "includeAll": true,
                 "refresh": true,
                 "current": {
                     "text": "All",
-                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008}"
+                    "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008,restbase1009,restbase2001,restbase2002,restbase2003,restbase2004,restbase2005,restbase2006}"
                 },
                 "name": "node",
-                "query": "cassandra.restbase*",
+                "query": "cassandra.restbase$datacenter*",
                 "datasource": "graphite",
                 "options": [
                     {
                         "text": "All",
-                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008}"
+                        "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008,restbase1009,restbase2001,restbase2002,restbase2003,restbase2004,restbase2005,restbase2006}"
                     },
                     {
                         "text": "restbase1001",
@@ -59,6 +87,34 @@
                     {
                         "text": "restbase1008",
                         "value": "restbase1008"
+                    },
+                    {
+                        "text": "restbase1009",
+                        "value": "restbase1009"
+                    },
+                    {
+                        "text": "restbase2001",
+                        "value": "restbase2001"
+                    },
+                    {
+                        "text": "restbase2002",
+                        "value": "restbase2002"
+                    },
+                    {
+                        "text": "restbase2003",
+                        "value": "restbase2003"
+                    },
+                    {
+                        "text": "restbase2004",
+                        "value": "restbase2004"
+                    },
+                    {
+                        "text": "restbase2005",
+                        "value": "restbase2005"
+                    },
+                    {
+                        "text": "restbase2006",
+                        "value": "restbase2006"
                     }
                 ],
                 "type": "query"

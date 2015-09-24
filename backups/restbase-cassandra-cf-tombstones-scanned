@@ -6,10 +6,38 @@
     "style": "dark",
     "time": {
         "to": "now",
-        "from": "now-6h"
+        "from": "now-2h"
     },
     "templating": {
         "list": [
+            {
+                "allFormat": "glob",
+                "refresh_on_load": false,
+                "includeAll": true,
+                "regex": "/restbase([0-9]).*/",
+                "current": {
+                    "text": "1",
+                    "value": "1"
+                },
+                "name": "datacenter",
+                "query": "cassandra.restbase{1,2}*",
+                "datasource": null,
+                "options": [
+                    {
+                        "text": "All",
+                        "value": "{1,2}"
+                    },
+                    {
+                        "text": "1",
+                        "value": "1"
+                    },
+                    {
+                        "text": "2",
+                        "value": "2"
+                    }
+                ],
+                "type": "query"
+            },
             {
                 "allFormat": "glob",
                 "refresh_on_load": false,
@@ -20,7 +48,7 @@
                     "value": "{restbase1001,restbase1002,restbase1003,restbase1004,restbase1005,restbase1006,restbase1007,restbase1008,restbase1009}"
                 },
                 "name": "node",
-                "query": "cassandra.restbase*",
+                "query": "cassandra.restbase$datacenter*",
                 "datasource": "graphite",
                 "options": [
                     {
