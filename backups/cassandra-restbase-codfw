@@ -12,7 +12,7 @@
         "list": [],
         "enable": false
     },
-    "refresh": false,
+    "refresh": "1m",
     "hideAllLegends": false,
     "editable": true,
     "nav": [
@@ -82,7 +82,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase1*.jvm.gc.G1-Young-Generation.time), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase2*.jvm.gc.G1-Young-Generation.time), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -156,7 +156,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase1*.jvm.gc.G1-Old-Generation.time), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase2*.jvm.gc.G1-Old-Generation.time), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -238,7 +238,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase1*.org.apache.cassandra.metrics.ClientRequestMetrics.ReadTimeouts.count), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase2*.org.apache.cassandra.metrics.ClientRequestMetrics.ReadTimeouts.count), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -312,7 +312,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase1*.org.apache.cassandra.metrics.ClientRequestMetrics.WriteTimeouts.count), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase2*.org.apache.cassandra.metrics.ClientRequestMetrics.WriteTimeouts.count), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -386,7 +386,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase1*.org.apache.cassandra.metrics.DroppedMessage.MUTATION.Dropped.count), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase2*.org.apache.cassandra.metrics.DroppedMessage.MUTATION.Dropped.count), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -460,12 +460,12 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase1*.org.apache.cassandra.metrics.Connection.TotalTimeouts.count), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(nonNegativeDerivative(cassandra.restbase2*.org.apache.cassandra.metrics.Connection.TotalTimeouts.count), '^.*\\.restbase(\\d*).*$', '\\1')"
                         },
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(movingAverage(nonNegativeDerivative(cassandra.restbase1*.org.apache.cassandra.metrics.Connection.TotalTimeouts.count), '1hour'), '^.*\\.restbase(\\d*).*$', '\\1, 1h avg')"
+                            "target": "aliasSub(movingAverage(nonNegativeDerivative(cassandra.restbase2*.org.apache.cassandra.metrics.Connection.TotalTimeouts.count), '1hour'), '^.*\\.restbase(\\d*).*$', '\\1, 1h avg')"
                         }
                     ],
                     "tooltip": {
@@ -547,12 +547,12 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(cassandra.restbase1*.org.apache.cassandra.metrics.ClientRequest.Read.Latency.99percentile, '^.*\\.restbase(\\d*).*$', '\\1 p99')"
+                            "target": "aliasSub(cassandra.restbase2*.org.apache.cassandra.metrics.ClientRequest.Read.Latency.99percentile, '^.*\\.restbase(\\d*).*$', '\\1 p99')"
                         },
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(cassandra.restbase1*.org.apache.cassandra.metrics.ClientRequest.Read.Latency.50percentile, '^.*\\.restbase(\\d*).*$', '\\1 p50')"
+                            "target": "aliasSub(cassandra.restbase2*.org.apache.cassandra.metrics.ClientRequest.Read.Latency.50percentile, '^.*\\.restbase(\\d*).*$', '\\1 p50')"
                         }
                     ],
                     "tooltip": {
@@ -626,12 +626,12 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(cassandra.restbase1*.org.apache.cassandra.metrics.ClientRequest.Write.Latency.99percentile, '^.*\\.restbase(\\d*).*$', '\\1 p99')"
+                            "target": "aliasSub(cassandra.restbase2*.org.apache.cassandra.metrics.ClientRequest.Write.Latency.99percentile, '^.*\\.restbase(\\d*).*$', '\\1 p99')"
                         },
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(cassandra.restbase1*.org.apache.cassandra.metrics.ClientRequest.Write.Latency.50percentile, '^.*\\.restbase(\\d*).*$', '\\1 p50')"
+                            "target": "aliasSub(cassandra.restbase2*.org.apache.cassandra.metrics.ClientRequest.Write.Latency.50percentile, '^.*\\.restbase(\\d*).*$', '\\1 p50')"
                         }
                     ],
                     "tooltip": {
@@ -713,7 +713,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(movingMedian(servers.restbase1*.iostat.md2.read_byte_per_second, 5), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(movingMedian(servers.restbase2*.iostat.md2.read_byte_per_second, 5), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -787,7 +787,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(movingMedian(servers.restbase1*.iostat.md2.write_byte_per_second, 5), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(movingMedian(servers.restbase2*.iostat.md2.write_byte_per_second, 5), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -861,7 +861,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(movingMedian(nonNegativeDerivative(cassandra.restbase1*.org.apache.cassandra.metrics.ThreadPools.request.ReadStage.CompletedTasks.value), 5), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(movingMedian(nonNegativeDerivative(cassandra.restbase2*.org.apache.cassandra.metrics.ThreadPools.request.ReadStage.CompletedTasks.value), 5), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -935,7 +935,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(movingMedian(nonNegativeDerivative(cassandra.restbase1*.org.apache.cassandra.metrics.ThreadPools.request.MutationStage.CompletedTasks.value), 5), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(movingMedian(nonNegativeDerivative(cassandra.restbase2*.org.apache.cassandra.metrics.ThreadPools.request.MutationStage.CompletedTasks.value), 5), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -1009,7 +1009,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(servers.restbase1*.diskspace._var.byte_used, '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(servers.restbase2*.diskspace._var.byte_used, '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -1091,7 +1091,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(cassandra.restbase1*.org.apache.cassandra.metrics.Compaction.PendingTasks.value, '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(cassandra.restbase2*.org.apache.cassandra.metrics.Compaction.PendingTasks.value, '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -1165,7 +1165,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(movingMedian(nonNegativeDerivative(cassandra.restbase1*.org.apache.cassandra.metrics.Compaction.BytesCompacted.count), '10min'), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(movingMedian(nonNegativeDerivative(cassandra.restbase2*.org.apache.cassandra.metrics.Compaction.BytesCompacted.count), '10min'), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -1247,7 +1247,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(movingMedian(servers.restbase1*.cpu.total.nice, '10min'), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(movingMedian(servers.restbase2*.cpu.total.nice, '10min'), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -1321,7 +1321,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(movingMedian(servers.restbase1*.cpu.total.iowait, '10min'), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(movingMedian(servers.restbase2*.cpu.total.iowait, '10min'), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -1395,7 +1395,7 @@
                         {
                             "function": "mean",
                             "column": "value",
-                            "target": "aliasSub(movingMedian(scale(offset(servers.restbase1*.cpu.total.idle, -100), -1), '10min'), '^.*\\.restbase(\\d*).*$', '\\1')"
+                            "target": "aliasSub(movingMedian(scale(offset(servers.restbase2*.cpu.total.idle, -100), -1), '10min'), '^.*\\.restbase(\\d*).*$', '\\1')"
                         }
                     ],
                     "tooltip": {
@@ -1450,8 +1450,8 @@
     "version": 6,
     "sharedCrosshair": true,
     "id": null,
-    "title": "Cassandra restbase eqiad",
+    "title": "Cassandra restbase codfw",
     "timezone": "utc",
-    "originalTitle": "Cassandra restbase eqiad",
+    "originalTitle": "Cassandra restbase codfw",
     "tags": []
 }
